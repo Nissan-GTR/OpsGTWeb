@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  post_build:
+    commands:
+      - echo "Starting GTR--- MVN Install"
+      - echo " << Start Date `date` >>"
+      - mvn install
+artifacts:
+  files:
+    - '**/*.war'
+  base-directory: 'target'
