@@ -9,24 +9,46 @@
 </head>
 <body>
 
+<img src="./images/banner.png" alt="Godzilla">
+
 <%
 	Date d = new Date();
 	System.out.println("Current Date="+d);
 %>
 
-
     <form action = "OPSWelcomeServlet" method = "POST">
-       First Name: <input type = "text" name = "first_name">
-       <br/>
-       Last Name: <input type = "text" name = "last_name" />
-       <br/>
-       Gender: 
+       
+       
+
+	<table>
+       <tr>
+			<td>First Name:</td> <td><input type = "text" name = "first_name"></td>
+		</tr>
+        <tr>
+			<td>Last Name:</td> <td><input type = "text" name = "last_name"></td>
+       	</tr>
+       
+	   <tr>
+       <td>Gender: </td> 
+       <td>
         <select name="gender">
   			<option value="Male">Male</option>
   			<option value="Female">Female</option>
 		</select>
+       <td>
+       </tr>
+	   
+	   <tr>
+	   <td></td>
+	   <td></td>
+	   </tr>
+	   <tr>
+	   <td><input type = "Submit" value = "Kaboom" /> </td>
+	   <td><input type = "Reset" value = "Reset" /> </td>
+	   </tr>
+	   
+	</table>	   
        
-       <input type = "submit" value = "Submit" />
     </form>
 
 
