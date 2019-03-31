@@ -1,11 +1,19 @@
 version: 0.2
 
 phases:
-  post_build:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
     commands:
       - echo "Starting GTR--- MVN Install"
       - echo " << Start Date `date` >>"
       - mvn install
+  post_build:
+      - echo "Running Docker commands "
+      - docker build -t opstomcat8:version-4 .
+      - docker tag opstomcat8:version-4 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:5
 artifacts:
   files:
     - '**/*.war'
