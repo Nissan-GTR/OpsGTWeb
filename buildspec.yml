@@ -23,7 +23,7 @@ phases:
     commands:
       - echo "Running Docker commands "
       - docker build -t opstomcatdocker .
-      - docker tag opstomcatdocker:v5 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:v5
+      - docker tag opstomcatdocker 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:v5
       - echo "Pushing Docker image to ECR"
       - docker push 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:v5
 artifacts:
