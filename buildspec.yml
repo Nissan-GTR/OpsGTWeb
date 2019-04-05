@@ -22,8 +22,10 @@ phases:
   post_build:
     commands:
       - echo "Running Docker commands "
-      - docker build -t opstomcat8:version-4 .
-      - docker tag opstomcat8:version-4 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:5
+      - docker build -t opstomcatdocker .
+      - docker tag opstomcatdocker:v5 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:v5
+      - echo "Pushing Docker image to ECR"
+      - docker push 019894823873.dkr.ecr.us-east-2.amazonaws.com/opstomcatdocker:v5
 artifacts:
   files:
     - '**/*.war'
